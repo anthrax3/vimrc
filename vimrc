@@ -33,12 +33,8 @@ autocmd Filetype *
 \   setlocal omnifunc=syntaxcomplete#Complete |
 \ endif
 
-if has("gui_running")
-  colorscheme desert
-else
-  " Use brighter colours for white on black terminals.
-  set background=dark
-endif
+" All terminals are colour now.
+colorscheme desert
 
 " Switch syntax hilighting on.
 syntax on
