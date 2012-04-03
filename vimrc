@@ -33,7 +33,7 @@ set listchars=tab:·\ ,trail:·,extends:»,precedes:«
 set showcmd
 set smartcase
 
-" Do not automatically insert a comment leader after an enter
+" Do not automatically insert a comment leader after an enter.
 set formatoptions-=r
 
 " Remove the blinking cursor.
@@ -58,7 +58,7 @@ autocmd FileType *
 \   setlocal omnifunc=syntaxcomplete#Complete |
 \ endif
 
-" Contextually switch between relative and absolute line numbers
+" Contextually switch between relative and absolute line numbers.
 set relativenumber
 autocmd InsertEnter * setlocal number
 autocmd InsertLeave * setlocal relativenumber
@@ -69,8 +69,8 @@ autocmd BufReadPost,FileReadPost *
 \   setlocal foldlevel=0 |
 \ endif
 
-" Highlight VCS conflict markers
+" Highlight VCS conflict markers.
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-" Per-filetype settings.
+" Enable per-filetype settings.
 filetype plugin indent on
