@@ -36,12 +36,12 @@ set smartcase
 " Do not automatically insert a comment leader after an enter
 set formatoptions-=r
 
+" Remove the blinking cursor.
+let &guicursor = &guicursor . ",a:blinkon0"
+
 " Remove GUI menus.
 set guioptions-=T
 set guioptions-=m
-
-" Remove the blinking cursor.
-let &guicursor = &guicursor . ",a:blinkon0"
 
 set showmatch
 runtime macros/matchit.vim
