@@ -1,7 +1,6 @@
 set nocompatible
 filetype off
 
-" Vundle
 set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -21,67 +20,57 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vimoutliner/vimoutliner'
 
-" When editing a file, jump to the last cursor position.
-autocmd BufReadPost *
-\ if line("'\"") > 0 && line ("'\"") <= line("$") |
-\   execute "normal! g'\"" |
-\ endif
-
-" Use syntax based omnicompletion, in the worst case.
-autocmd Filetype *
-\ if &omnifunc == "" |
-\   setlocal omnifunc=syntaxcomplete#Complete |
-\ endif
-
-" All terminals are colour now.
+syntax on
 colorscheme desert
 
-" Switch syntax hilighting on.
-syntax on
-
-" Folding depends on syntax hilighting to be on.
+set cryptmethod=blowfish
 set foldmethod=syntax
-
-" Also switch on highlighting the last used search pattern.
 set hlsearch
+set ignorecase
+set incsearch
+set list
+set listchars=tab:·\ ,trail:·,extends:»,precedes:«
+set showcmd
+set smartcase
 
-" Remove menu ugliness.
+" Do not automatically insert a comment leader after an enter
+set formatoptions-=r
+
+" Remove GUI menus.
 set guioptions-=T
 set guioptions-=m
 
 " Remove the blinking cursor.
 let &guicursor = &guicursor . ",a:blinkon0"
 
-" Show partially entered commands on the status line.
-set showcmd
-
-" Indicate matching braces.
 set showmatch
 runtime macros/matchit.vim
 
-" Show the results of a search immediately.
-set incsearch
+" When editing a file, jump to the last cursor position.
+autocmd BufReadPost,FileReadPost *
+\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+\   execute "normal! g'\"" |
+\ endif
 
-" Searches should only be case-sensitive if there are uppercase letters.
-set ignorecase
-set smartcase
-
-" Do not automatically insert a comment leader after an enter
-set formatoptions-=r
-
-" Display unprintable characters
-set list
-set listchars=tab:·\ ,trail:·,extends:»,precedes:«
+" Fallback to syntax based omnicompletion.
+autocmd FileType *
+\ if &omnifunc == "" |
+\   setlocal omnifunc=syntaxcomplete#Complete |
+\ endif
 
 " Contextually switch between relative and absolute line numbers
 set relativenumber
-autocmd InsertEnter * :setlocal number
-autocmd InsertLeave * :setlocal relativenumber
+autocmd InsertEnter * setlocal number
+autocmd InsertLeave * setlocal relativenumber
+
+autocmd FileType ruby setlocal expandtab shiftwidth=2 autoindent
+autocmd BufReadPost,FileReadPost *
+\ if &filetype == "vo_base" |
+\   setlocal foldlevel=0 |
+\ endif
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-
-autocmd FileType ruby setlocal expandtab shiftwidth=2 autoindent
 
 " Per-filetype settings.
 filetype plugin indent on
