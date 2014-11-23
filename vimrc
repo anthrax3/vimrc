@@ -18,14 +18,12 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'vimoutliner/vimoutliner'
 
 call vundle#end()
 
 syntax on
 colorscheme desert
 
-set cryptmethod=blowfish
 set foldmethod=syntax
 set hlsearch
 set ignorecase
@@ -59,12 +57,6 @@ autocmd BufReadPost,FileReadPost *
 autocmd FileType *
 \ if &omnifunc == "" |
 \   setlocal omnifunc=syntaxcomplete#Complete |
-\ endif
-
-autocmd FileType ruby setlocal expandtab shiftwidth=2 autoindent
-autocmd BufReadPost,FileReadPost *
-\ if &filetype == "votl" |
-\   setlocal foldlevel=0 |
 \ endif
 
 " Highlight VCS conflict markers.
