@@ -9,13 +9,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'ciaranm/securemodelines'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
