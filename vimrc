@@ -32,6 +32,7 @@ set ignorecase
 set incsearch
 set list
 set listchars=tab:·\ ,trail:·,extends:»,precedes:«
+set number relativenumber
 set showcmd
 set smartcase
 
@@ -59,11 +60,6 @@ autocmd FileType *
 \ if &omnifunc == "" |
 \   setlocal omnifunc=syntaxcomplete#Complete |
 \ endif
-
-" Contextually switch between relative and absolute line numbers.
-set relativenumber
-autocmd InsertEnter * setlocal number
-autocmd InsertLeave * setlocal relativenumber
 
 autocmd FileType ruby setlocal expandtab shiftwidth=2 autoindent
 autocmd BufReadPost,FileReadPost *
