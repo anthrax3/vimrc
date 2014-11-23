@@ -63,7 +63,7 @@ autocmd FileType *
 
 autocmd FileType ruby setlocal expandtab shiftwidth=2 autoindent
 autocmd BufReadPost,FileReadPost *
-\ if &filetype == "vo_base" |
+\ if &filetype == "votl" |
 \   setlocal foldlevel=0 |
 \ endif
 
