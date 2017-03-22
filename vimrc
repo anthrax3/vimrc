@@ -20,6 +20,7 @@ call vundle#end()
 syntax on
 colorscheme desert
 
+set cursorline
 set foldmethod=syntax
 set hlsearch
 set ignorecase
@@ -29,6 +30,7 @@ set listchars=tab:·\ ,trail:·,extends:»,precedes:«
 set number relativenumber
 set showcmd
 set smartcase
+set wildmenu
 
 " Do not automatically insert a comment leader after an enter.
 set formatoptions-=r
